@@ -15,6 +15,8 @@
 		4AD457A01DB5FCD0000DDF74 /* iOSDecalProj1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD4579F1DB5FCD0000DDF74 /* iOSDecalProj1UITests.swift */; };
 		4AD457B01DB6054C000DDF74 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD457AF1DB6054C000DDF74 /* ToDoListTableViewController.swift */; };
 		4AE837131DB612DC00A05858 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE837121DB612DC00A05858 /* ToDoItemViewController.swift */; };
+		4AE837151DB702E600A05858 /* ToDoListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE837141DB702E600A05858 /* ToDoListItemTableViewCell.swift */; };
+		4AE837171DB7467800A05858 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE837161DB7467800A05858 /* ToDoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		4AD457A11DB5FCD0000DDF74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4AD457AF1DB6054C000DDF74 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
 		4AE837121DB612DC00A05858 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
+		4AE837141DB702E600A05858 /* ToDoListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListItemTableViewCell.swift; sourceTree = "<group>"; };
+		4AE837161DB7467800A05858 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +105,9 @@
 			children = (
 				4AD4577F1DB5FCD0000DDF74 /* AppDelegate.swift */,
 				4AD457AF1DB6054C000DDF74 /* ToDoListTableViewController.swift */,
+				4AE837161DB7467800A05858 /* ToDoItem.swift */,
 				4AE837121DB612DC00A05858 /* ToDoItemViewController.swift */,
+				4AE837141DB702E600A05858 /* ToDoListItemTableViewCell.swift */,
 				4AD457831DB5FCD0000DDF74 /* Main.storyboard */,
 				4AD457861DB5FCD0000DDF74 /* Assets.xcassets */,
 				4AD457881DB5FCD0000DDF74 /* LaunchScreen.storyboard */,
@@ -264,6 +270,8 @@
 			files = (
 				4AD457801DB5FCD0000DDF74 /* AppDelegate.swift in Sources */,
 				4AE837131DB612DC00A05858 /* ToDoItemViewController.swift in Sources */,
+				4AE837171DB7467800A05858 /* ToDoItem.swift in Sources */,
+				4AE837151DB702E600A05858 /* ToDoListItemTableViewCell.swift in Sources */,
 				4AD457B01DB6054C000DDF74 /* ToDoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

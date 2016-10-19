@@ -9,6 +9,9 @@
 import UIKit
 
 class ToDoListTableViewController: UITableViewController {
+    @IBOutlet weak var ToDoListItemContentView: UIView!
+    
+    var cellList = [ToDoItem(title: "To Do 1", detail: "To Do 1")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +32,30 @@ class ToDoListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return cellList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        self.tableView.register(ToDoListItemTableViewCell.self, forCellReuseIdentifier: "ToDoListItemTableViewCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListItemTableViewCell", for: indexPath) as! ToDoListItemTableViewCell
 
         // Configure the cell...
-
+        
+        let toDoItem : ToDoItem = cellList[indexPath.row]!
+        cell.textLabel!.text = toDoItem.toDoTitle
+        //cell.ToDoItemTitleLabel.text = toDoItem.toDoTitle
+        //cell.ToDoItemDetailLabel.text = toDoItem.toDoDetail
+        
+    
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
