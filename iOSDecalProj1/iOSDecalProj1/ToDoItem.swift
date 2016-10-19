@@ -12,10 +12,17 @@ class ToDoItem: NSObject {
     
     var toDoTitle : String = ""
     var toDoDetail : String = ""
+    var selected : Bool
+    var timer : Timer?
     
     init?(title: String, detail: String) {
         toDoTitle = title
         toDoDetail = detail
+        selected = false
+    }
+    
+    func isSelected() -> Bool {
+        return selected
     }
 
 }

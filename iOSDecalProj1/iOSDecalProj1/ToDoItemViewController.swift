@@ -39,9 +39,11 @@ class ToDoItemViewController: UIViewController {
         let toDoItemTitle : String = toDoTitleTextField.text!
         let toDoItemDetail : String = toDoDetailTextField.text!
         
-        
         let toDoItem : ToDoItem = ToDoItem(title: toDoItemTitle, detail: toDoItemDetail)!
         
+        //Gets old table
+        let count = self.navigationController!.viewControllers.count;
+        toDoListTableViewController.cellList = (self.navigationController!.viewControllers[count - 2] as! ToDoListTableViewController).cellList;
         
         toDoListTableViewController.cellList.append(toDoItem)
         
