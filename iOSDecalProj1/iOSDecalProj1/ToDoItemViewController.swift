@@ -34,7 +34,7 @@ class ToDoItemViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let nav = segue.destination as! UINavigationController
-        let toDoListTableViewController = nav.topViewController as!ToDoListTableViewController
+        let toDoListTableViewController = nav.topViewController as! ToDoListTableViewController
         
         let toDoItemTitle : String = toDoTitleTextField.text!
         let toDoItemDetail : String = toDoDetailTextField.text!

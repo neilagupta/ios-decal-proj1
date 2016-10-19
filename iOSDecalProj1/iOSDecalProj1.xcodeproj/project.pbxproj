@@ -196,6 +196,9 @@
 		4AD457741DB5FCD0000DDF74 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					10,
+				);
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Neil Ambar Gupta";

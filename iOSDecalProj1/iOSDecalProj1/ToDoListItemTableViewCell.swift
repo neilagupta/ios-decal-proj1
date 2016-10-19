@@ -9,18 +9,22 @@
 import UIKit
 
 class ToDoListItemTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var ToDoItemTitleLabel: UILabel!
-    @IBOutlet weak var ToDoItemDetailLabel: UILabel!
+      
     
     override func awakeFromNib() {
+        
         super.awakeFromNib()
         // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        self.backgroundColor = UIColor.green
+        if (selected == true) {
+            //Changes background color when selected
+            self.backgroundColor = UIColor.green
+        } else {
+            self.backgroundColor = UIColor.white
+        }
         // Configure the view for the selected state
     }
 
