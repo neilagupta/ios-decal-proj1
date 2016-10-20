@@ -21,7 +21,8 @@ class ToDoListItemTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         if (selected == true) {
             //Changes background color when selected
-            self.backgroundColor = UIColor.green
+            
+            self.backgroundColor = UIColor.blue
         } else {
             self.backgroundColor = UIColor.white
         }

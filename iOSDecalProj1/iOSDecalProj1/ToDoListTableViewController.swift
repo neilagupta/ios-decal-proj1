@@ -47,6 +47,7 @@ class ToDoListTableViewController: UITableViewController {
 
         // Configure the cell...
         
+        //Displays for each ToDoItem that exists in the cellList
         let toDoItem : ToDoItem = cellList[indexPath.row]!
         
         cell.textLabel!.text = toDoItem.toDoTitle
@@ -74,6 +75,22 @@ class ToDoListTableViewController: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Tells it is selected
+        cellList[indexPath.row]!.selected = true
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        //Tells it is deselected
+        cellList[indexPath.row]!.selected = false
+    }
+    
+    //For all selected rows that are 24 hrs selected they delete themselves
+    func checkIfSelectedRowExpired() {
+        
     }
  
 
