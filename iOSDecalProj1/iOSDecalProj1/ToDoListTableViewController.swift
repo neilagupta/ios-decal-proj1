@@ -15,17 +15,6 @@ class ToDoListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //Times out after 24 hours for selected cells
-        
-        let newCellList = cellList.filter({ if ($0?.selected == true) { return $0!.selectedDate!.timeIntervalSinceNow.isLessThanOrEqualTo(86400)
-        }
-        return true
-    
-        }
-        )
-        
-        cellList = newCellList
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -54,6 +43,8 @@ class ToDoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         self.tableView.register(ToDoListItemTableViewCell.self, forCellReuseIdentifier: "ToDoListItemTableViewCell")
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoListItemTableViewCell", for: indexPath) as! ToDoListItemTableViewCell
+        
+        checkIfSelectedRowExpired()
 
         // Configure the cell...
         
@@ -90,17 +81,30 @@ class ToDoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Tells it is selected
         cellList[indexPath.row]!.selected = true
+        cellList[indexPath.row]!.startTimer()
         
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         //Tells it is deselected
         cellList[indexPath.row]!.selected = false
+        cellList[indexPath.row]?.selectedDate = nil
     }
     
     //For all selected rows that are 24 hrs selected they delete themselves
     func checkIfSelectedRowExpired() {
+        //Times out after 24 hours for selected cells
         
+        let newCellList = cellList.filter({
+            if ($0?.selected == true) {
+                return Date().timeIntervalSince($0!.selectedDate!).isLessThanOrEqualTo(2)
+            }
+            return true
+            
+            }
+        )
+        
+        cellList = newCellList
     }
     
     //Selects all
