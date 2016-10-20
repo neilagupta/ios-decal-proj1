@@ -18,7 +18,10 @@ class ToDoListTableViewController: UITableViewController {
         
         //Times out after 24 hours for selected cells
         
-        let newCellList = cellList.filter({ $0!.selectedDate!.timeIntervalSinceNow.isLessThanOrEqualTo(86400)
+        let newCellList = cellList.filter({ if ($0?.selected == true) { return $0!.selectedDate!.timeIntervalSinceNow.isLessThanOrEqualTo(86400)
+        }
+        return true
+    
         }
         )
         
