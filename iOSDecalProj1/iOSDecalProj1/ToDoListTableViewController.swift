@@ -15,7 +15,14 @@ class ToDoListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        //Times out after 24 hours for selected cells
+        
+        let newCellList = cellList.filter({ $0!.selectedDate!.timeIntervalSinceNow.isLessThanOrEqualTo(86400)
+        }
+        )
+        
+        cellList = newCellList
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -91,6 +98,14 @@ class ToDoListTableViewController: UITableViewController {
     //For all selected rows that are 24 hrs selected they delete themselves
     func checkIfSelectedRowExpired() {
         
+    }
+    
+    //Selects all
+    @IBAction func doSelectAll(sender: UIBarButtonItem) {
+        let totalRows = tableView.numberOfRows(inSection: 0)
+        for row in 0..<totalRows {
+//            tableView.selectRow(at: NSIndexPath(row:row), animated: false, scrollPosition: UITableViewScrollPosition.none)
+        }
     }
  
 

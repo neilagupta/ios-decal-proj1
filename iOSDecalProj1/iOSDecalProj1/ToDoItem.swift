@@ -13,7 +13,7 @@ class ToDoItem: NSObject {
     var toDoTitle : String = ""
     var toDoDetail : String = ""
     var selected : Bool
-    var timer : Timer?
+    var selectedDate : NSDate? = nil
     
     init?(title: String, detail: String) {
         toDoTitle = title
@@ -23,6 +23,14 @@ class ToDoItem: NSObject {
     
     func isSelected() -> Bool {
         return selected
+    }
+    
+    func startTimer() {
+        selectedDate = NSDate()
+    }
+    
+    func clearTimer() {
+        
     }
 
 }
